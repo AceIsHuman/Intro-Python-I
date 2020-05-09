@@ -30,3 +30,23 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+today = datetime.today()
+month, year = today.month, today.year
+
+if len(sys.argv) > 1:
+  month = sys.argv[1]
+if len(sys.argv) > 2:
+  year = sys.argv[2]
+ 
+print('month: ', month)
+print('year: ', year)
+
+# How can I change this to check for months entered as strings?
+if month < 1 or month > 12:
+  print('USAGE: 14_cal.py [month] [year]')
+  print('[month] -> eg. 12')
+  print('[year] -> eg. 1999')
+
+for week in calendar.monthcalendar(int(year), int(month)):
+  print(week)
