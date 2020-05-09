@@ -28,5 +28,6 @@ print(f'\nProcess id: {os.getpid()}')
 print(f'Current Working Directory: {os.getcwd()}')
 
 # Print out your machine's login name
-user = os.getlogin()
+import pwd
+user = pwd.getpwuid(os.getuid()).pw_name
 print(f'Login Name: {user}')
