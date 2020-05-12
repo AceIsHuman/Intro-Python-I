@@ -45,8 +45,4 @@ if not month.isnumeric() or int(month) < 1 or int(month) > 12:
   print('-- [year] -> eg. 1999')
   sys.exit()
  
-print('month: ', month)
-print('year: ', year)
-
-for week in calendar.monthcalendar(int(year), int(month)):
-  print(week)
+print(calendar.month(int(year), int(month)))
